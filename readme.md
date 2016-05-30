@@ -149,12 +149,13 @@ queryAll:
    
 queryTopic:
    # Query questions from "The Moscow Times" and one more topic
-   path: GET /tmt/questions/topic/:topic
-   args:
-       topic: string
-       limit:      int32          
+   path: POST /tmt/questions/topic/:topic
+   args:        
        # These params are optional.
+       limit:      int32  
        offset:     int32           # Default is 0.
+   request:
+       topic:      string
    result: list<TmtQuestion>    
 
 ```
