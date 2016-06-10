@@ -12,6 +12,7 @@ Services:
 - [Authorization](#authorization)
 - [Answers](#answers)
 - [Questions](#questions)
+- [Accounts](#accounts)
 
 
 Overview
@@ -104,11 +105,18 @@ AccountToken:
 **Methods**
 ```yaml
 signIn:
-   #sign in from Facebook
-   path: POST /tmt/sign_in
+   # sign in via Facebook.
+   path: GET /tmt/sign_in
    args:
-       token: string
-   result:  AccountToken
+        url string
+   result:  redirect to  <uri>?code=:code
+   
+queryAccount:
+    # returns AccountToken token by code
+    path: POST /tmt/token
+    args:
+        code string
+    result: AccountToken
 ```
 
 
