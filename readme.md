@@ -109,10 +109,10 @@ signIn:
    path: GET /tmt/sign_in
    args:
         url string
-   result:  redirect to  <uri>?code=:code
-   
-queryAccount:
-    # returns AccountToken token by code
+   result:  redirect to  <uri>?code=:code&error=<fb_error>&error_description=<fb_error_description>
+
+getToken:
+    # returns AccountToken by code. note that you can use single code only once within 5 minuets after sign_in
     path: POST /tmt/token
     args:
         code string
