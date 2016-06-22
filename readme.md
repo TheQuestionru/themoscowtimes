@@ -154,6 +154,13 @@ queryAll:
        # These params are optional.
        offset:     int32           # Default is 0.
    result: list<TmtQuestion>
+ 
+queryById:
+   # Query question by id
+   path: GET /tmt/question/:questionId
+   args:
+        quetionId: int32
+   result: TmtQuestion
    
 queryTopic:
    # Query questions from "The Moscow Times" and one more topic
